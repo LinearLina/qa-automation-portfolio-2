@@ -18,7 +18,8 @@ test.describe('Cloudflare public site — smoke checks', () => {
     expect(results.violations.length).toBeLessThan(20);
   });
 
- test('homepage visual snapshot', async ({ page }) => {
+  test('homepage visual snapshot', async ({ page }) => {
+  test.skip(!!process.env.CI, 'Visual snapshots are OS-specific; only run locally, not in CI');
   await page.goto('https://www.cloudflare.com');
   await expect(page).toHaveScreenshot('cloudflare-homepage.png', {
     maxDiffPixelRatio: 0.15,

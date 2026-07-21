@@ -45,3 +45,7 @@ and link checking - plus API-layer tests against a public networking API
 (ipify). Both were chosen to reflect infrastructure/networking-focused testing, 
 since reliability failures in that space are often invisible until they 
 become expensive.
+## Known Limitation
+Visual regression tests are excluded from CI because screenshot baselines are 
+OS-specific (macOS vs Linux rendering differ), and generating matched baselines 
+requires a containerized environment. These tests run locally only.

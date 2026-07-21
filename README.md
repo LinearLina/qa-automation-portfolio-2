@@ -37,3 +37,11 @@ pages/      - Page Object Model classes
 - API-layer tests using Playwright's request context
 - Accessibility checks with axe-core
 - Load testing with k6
+
+## Notes on Testing Philosophy
+This project includes a small read-only smoke suite against a live production 
+site (cloudflare.com) — homepage load, accessibility scan, visual regression, 
+and link checking — plus API-layer tests against a public networking API 
+(ipify). Both were chosen to reflect infrastructure/networking-focused testing, 
+since reliability failures in that space are often invisible until they 
+become expensive.

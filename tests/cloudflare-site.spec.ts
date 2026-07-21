@@ -18,13 +18,13 @@ test.describe('Cloudflare public site — smoke checks', () => {
     expect(results.violations.length).toBeLessThan(20);
   });
 
-  test('homepage visual snapshot', async ({ page }) => {
-    await page.goto('https://www.cloudflare.com');
-   await expect(page).toHaveScreenshot('cloudflare-homepage.png', {
-  maxDiffPixelRatio: 0.15,
-  animations: 'disabled',
-   });
+ test('homepage visual snapshot', async ({ page }) => {
+  await page.goto('https://www.cloudflare.com');
+  await expect(page).toHaveScreenshot('cloudflare-homepage.png', {
+    maxDiffPixelRatio: 0.15,
+    animations: 'disabled',
   });
+});
 
   test('main navigation links are not broken', async ({ page, request }) => {
     await page.goto('https://www.cloudflare.com');
